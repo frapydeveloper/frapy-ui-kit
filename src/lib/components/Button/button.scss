@@ -1,10 +1,10 @@
 @import "../../style/global.scss";
 
 .button-container {
-  border-radius: 10px;
-  min-height: 32px;
+  border-radius: 4px;
+  min-height: 36px;
   min-width: 32px;
-  padding: 10px 14px;
+  padding: 8px 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@
   box-sizing: border-box;
 
   &.sm {
-    padding: 10px 14px;
+    padding: 8px 12px;
   }
 
   &.md {
