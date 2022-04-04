@@ -1,6 +1,6 @@
 import "./style/global.scss";
 
-import Badge from "./components/Badge";
 import Button from "./components/Button";
+import Variable from "./components/Variable";
 
-export { Badge, Button };
+export { Button, Variable };
