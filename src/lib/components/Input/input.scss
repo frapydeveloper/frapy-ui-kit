@@ -27,5 +27,11 @@
     padding: 0 16px;
     min-height: 36px;
     box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: $ui-06;
+    }
   }
 }
