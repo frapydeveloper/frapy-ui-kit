@@ -1,0 +1,19 @@
+@import "../../style/global.scss";
+
+.card-wrapper {
+  display: inline-block;
+  background-color: $ui-01;
+  border-radius: 8px;
+
+  &.sm {
+    padding: 8px;
+  }
+
+  &.md {
+    padding: 16px;
+  }
+
+  &.lg {
+    padding: 32px;
+  }
+}
