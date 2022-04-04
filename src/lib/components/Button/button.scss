@@ -89,19 +89,19 @@
 
   &.secondary {
     &.normal {
-      background-color: $ui-10;
+      background-color: $ui-03;
       color: $text-01;
     }
 
     &.ghost {
       background-color: transparent;
-      color: $ui-10;
+      color: $ui-03;
     }
 
     &.tertiary {
       background-color: transparent;
-      border: 1px solid $ui-10;
-      color: $ui-10;
+      border: 1px solid $ui-03;
+      color: $ui-07;
     }
   }
 
