@@ -2,11 +2,11 @@ import "./input.scss";
 
 import React, { ReactElement } from "react";
 
-interface IRequiredProps {
-  type: "text" | "number" | "date" | "color" | "time";
-}
+interface IRequiredProps {}
 
 interface IOptionalProps {
+  type?: "text" | "number" | "date" | "color" | "time";
+  placeholder?: string;
   labelText?: string;
   hideLabel?: boolean;
   fullWidth?: boolean;
@@ -17,6 +17,7 @@ interface IOptionalProps {
 interface IProps extends IRequiredProps, IOptionalProps {}
 
 const defaultProps: IOptionalProps = {
+  type: "text",
   hideLabel: false,
   fullWidth: false,
   disabled: false,
@@ -24,6 +25,7 @@ const defaultProps: IOptionalProps = {
 
 function Input({
   type,
+  placeholder,
   labelText,
   hideLabel,
   onChange,
@@ -41,6 +43,7 @@ function Input({
         type={type}
         onChange={(event) => onChange && onChange(event.target.value)}
         disabled={disabled}
+        placeholder={placeholder}
       />
     </div>
   );
