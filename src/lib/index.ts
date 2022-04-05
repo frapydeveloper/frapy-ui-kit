@@ -7,6 +7,8 @@ import Input from "./components/Input";
 import Logo from "./components/Logo";
 import Navbar from "./components/Navbar";
 import Sidenav from "./components/Sidenav";
+import SidenavMenu from "./components/SidenavMenu";
+import SidenavMenuItem from "./components/SidenavMenuItem";
 import Typography from "./components/Typography";
 import Variable from "./components/Variable";
 
@@ -18,6 +20,8 @@ export {
   Logo,
   Navbar,
   Sidenav,
+  SidenavMenu,
+  SidenavMenuItem,
   Typography,
   Variable,
 };
