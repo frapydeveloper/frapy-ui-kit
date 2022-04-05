@@ -29,10 +29,10 @@
 
   .sidenav-sub-menu-items {
     .sidenav-menu-item-wrapper {
-      padding: 6px 32spx;
+      padding: 6px 44px;
 
       &.active {
-        padding: 6px 38px !important;
+        padding: 6px 40px !important;
         border-left: 4px solid $primary-01;
         background-color: $primary-01-25;
         color: $primary-01;
@@ -85,7 +85,7 @@
   }
 
   &.active {
-    padding: 6px 20px !important;
+    padding: 6px 28px !important;
     border-left: 4px solid $primary-01;
     background-color: $primary-01-25;
     color: $primary-01;
