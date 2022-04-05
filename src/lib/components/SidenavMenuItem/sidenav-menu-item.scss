@@ -1,0 +1,69 @@
+@import "../../style/global.scss";
+
+.sidenav-sub-menu-wrapper {
+  .sidenav-sub-menu-title {
+    padding: 6px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+
+    &:hover {
+      background-color: $ui-02;
+    }
+  }
+
+  .sidenav-sub-menu-items {
+    .sidenav-menu-item-wrapper {
+      padding: 6px 32spx;
+
+      &.active {
+        padding: 6px 38px !important;
+        border-left: 4px solid $primary-01;
+        background-color: $primary-01-25;
+        color: $primary-01;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .sidenav-sub-menu-wrapper {
+    .sidenav-sub-menu-title {
+      padding: 6px 42px;
+    }
+
+    .sidenav-sub-menu-items {
+      .sidenav-menu-item-wrapper {
+        padding: 6px 72px;
+
+        &.active {
+          padding: 6px 68px !important;
+          border-left: 4px solid $primary-01;
+          background-color: $primary-01-25;
+          color: $primary-01;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.sidenav-menu-item-wrapper {
+  padding: 6px 16px;
+  box-sizing: border-box;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+
+  &:hover {
+    background-color: $ui-02;
+  }
+
+  &.active {
+    padding: 6px 20px !important;
+    border-left: 4px solid $primary-01;
+    background-color: $primary-01-25;
+    color: $primary-01;
+    font-weight: 500;
+  }
+}
