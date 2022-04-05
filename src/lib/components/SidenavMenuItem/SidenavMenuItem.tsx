@@ -6,6 +6,7 @@ import React, {
   ReactElement,
   useState,
 } from "react";
+import { Add, ArrowDropDown, KeyboardArrowRight } from "@frapy/icons";
 
 interface IRequiredProps {}
 
@@ -38,7 +39,7 @@ function SidenavMenuItem({
             className="sidenav-sub-menu-title"
             onClick={() => setIsOpen(!isOpen)}
           >
-            + {labelText}
+            <KeyboardArrowRight size={24} /> <span>{labelText}</span>
           </div>
           {isOpen && <div className="sidenav-sub-menu-items">{children}</div>}
         </div>
