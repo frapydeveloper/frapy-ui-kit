@@ -11,6 +11,17 @@
     cursor: pointer;
     transition: 100ms ease-in-out;
 
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 100ms ease-in-out;
+
+      &.active {
+        transform: rotateZ(90deg);
+      }
+    }
+
     &:hover {
       background-color: $ui-02;
     }
@@ -33,6 +44,17 @@
   .sidenav-sub-menu-wrapper {
     .sidenav-sub-menu-title {
       padding: 6px 42px;
+
+      .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 100ms ease-in-out;
+
+        &.active {
+          transform: rotateZ(90deg);
+        }
+      }
     }
 
     .sidenav-sub-menu-items {

@@ -39,7 +39,10 @@ function SidenavMenuItem({
             className="sidenav-sub-menu-title"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <KeyboardArrowRight size={24} /> <span>{labelText}</span>
+            <div className={`icon-wrapper ${isOpen && "active"}`}>
+              <KeyboardArrowRight size={24} />
+            </div>
+            <span>{labelText}</span>
           </div>
           {isOpen && <div className="sidenav-sub-menu-items">{children}</div>}
         </div>
