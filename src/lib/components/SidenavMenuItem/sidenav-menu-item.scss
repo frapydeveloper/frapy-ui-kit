@@ -2,6 +2,9 @@
 
 .sidenav-sub-menu-wrapper {
   .sidenav-sub-menu-title {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
     padding: 6px 16px;
     box-sizing: border-box;
     font-size: 14px;
