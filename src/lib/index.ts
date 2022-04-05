@@ -7,5 +7,16 @@ import Input from "./components/Input";
 import Logo from "./components/Logo";
 import Typography from "./components/Typography";
 import Variable from "./components/Variable";
+import { Add, History } from "./components/Icon";
 
-export { Button, Card, Divider, Input, Logo, Typography, Variable };
+export {
+  Button,
+  Card,
+  Divider,
+  Input,
+  Logo,
+  Typography,
+  Variable,
+  Add,
+  History,
+};
