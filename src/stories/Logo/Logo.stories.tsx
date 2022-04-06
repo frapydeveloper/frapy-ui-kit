@@ -23,5 +23,5 @@ export const Default = Template.bind({});
 Default.args = {
   type: "small",
   size: 32,
-  light: true,
+  variant: "dark",
 };

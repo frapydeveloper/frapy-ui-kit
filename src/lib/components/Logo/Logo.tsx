@@ -7,17 +7,21 @@ interface IRequiredProps {}
 interface IOptionalProps {
   type?: "small" | "full";
   size?: number;
-  light?: boolean;
+  variant?: "light" | "dark";
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = { type: "small", size: 32, light: true };
+const defaultProps: IOptionalProps = {
+  type: "small",
+  size: 32,
+  variant: "dark",
+};
 
-function Logo({ type, size, light }: IProps): ReactElement {
+function Logo({ type, size, variant }: IProps): ReactElement {
   return (
     <div className="logo-wrapper">
-      {light ? (
+      {variant === "light" ? (
         <React.Fragment>
           {type === "small" && (
             <img
