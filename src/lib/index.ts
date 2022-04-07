@@ -7,6 +7,7 @@ import Divider from "./components/Divider";
 import Input from "./components/Input";
 import Logo from "./components/Logo";
 import Navbar from "./components/Navbar";
+import SearchBox from "./components/SearchBox";
 import Sidenav from "./components/Sidenav";
 import SidenavMenu from "./components/SidenavMenu";
 import SidenavMenuItem from "./components/SidenavMenuItem";
@@ -21,6 +22,7 @@ export {
   Input,
   Logo,
   Navbar,
+  SearchBox,
   Sidenav,
   SidenavMenu,
   SidenavMenuItem,
