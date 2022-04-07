@@ -45,8 +45,12 @@
       }
 
       &.disabled {
-        background-color: $ui-07;
+        background-color: $ui-08;
         cursor: default;
+
+        img {
+          opacity: 50%;
+        }
       }
 
       .coming-soon-wrapper {

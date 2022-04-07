@@ -1,8 +1,9 @@
 import "./app-selector.scss";
 
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useRef, useState } from "react";
 import Logo from "../Logo";
 import { ArrowDropDown } from "@frapy/icons";
+import { onClickOutside } from "@frapy/utils";
 
 interface IRequiredProps {}
 
@@ -20,8 +21,11 @@ const defaultProps: IOptionalProps = {
 function AppSelector({ onClick, light }: IProps): ReactElement {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const target = useRef(null);
+  onClickOutside({ target, callback: setIsOpen });
+
   return (
-    <div className={`app-selector-container ${light && "light"}`}>
+    <div className={`app-selector-container ${light && "light"}`} ref={target}>
       <div className="app-selector-wrapper" onClick={() => setIsOpen(!isOpen)}>
         <Logo type="full" />
         <ArrowDropDown />
