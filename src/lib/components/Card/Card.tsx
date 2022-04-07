@@ -2,11 +2,12 @@ import "./card.scss";
 
 import React, { ReactElement } from "react";
 
-interface IRequiredProps {}
+interface IRequiredProps {
+  padding: [number, number];
+}
 
 interface IOptionalProps {
   children?: JSX.Element | JSX.Element[] | string;
-  padding?: "sm" | "md" | "lg";
   backgroundStyle?: "solid" | "linear" | "radial";
   primaryColor?: string;
   secondaryColor?: string;
@@ -17,7 +18,6 @@ interface IOptionalProps {
 interface IProps extends IRequiredProps, IOptionalProps {}
 
 const defaultProps: IOptionalProps = {
-  padding: "sm",
   backgroundStyle: "solid",
   primaryColor: "#ffffff",
   secondaryColor: "#000000",
@@ -49,7 +49,10 @@ function Card({
   return (
     <div
       className={`card-wrapper ${padding} ${fullWidth && "full-width"}`}
-      style={{ background: setStyle() }}
+      style={{
+        background: setStyle(),
+        padding: `${padding[0]}px ${padding[1]}px`,
+      }}
     >
       {children}
     </div>
