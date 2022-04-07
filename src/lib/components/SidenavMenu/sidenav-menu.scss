@@ -1,0 +1,13 @@
+@import "../../style/global.scss";
+
+.sidenav-menu-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+
+  .sidenav-menu-title {
+    padding: 8px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

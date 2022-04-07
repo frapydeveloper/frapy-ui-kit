@@ -1,6 +1,6 @@
 {
   "name": "@frapy/ui-kit",
-  "version": "0.0.1",
+  "version": "0.0.27",
   "description": "Frapy UI Kit",
   "author": "Frapy",
   "keywords": [
@@ -24,6 +24,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@frapy/icons": "^0.0.3",
+    "@frapy/utils": "^0.0.1",
     "@mdx-js/react": "^2.1.1",
     "@storybook/addon-docs": "^6.4.20",
     "@testing-library/jest-dom": "^5.16.2",
