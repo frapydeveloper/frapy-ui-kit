@@ -27,7 +27,7 @@ const AppSelector = ({ onClick, light }: IProps) => {
   return (
     <div className={`app-selector-container ${light && "light"}`} ref={target}>
       <div className="app-selector-wrapper" onClick={() => setIsOpen(!isOpen)}>
-        <Logo application="frapy" type="full" />
+        <Logo application="frapy" type="full" variant="light" />
         <ArrowDropDown />
       </div>
       {isOpen && (
@@ -39,7 +39,7 @@ const AppSelector = ({ onClick, light }: IProps) => {
               onClick && onClick({ selectedApp: "frapy" });
             }}
           >
-            <Logo application="frapy" type="full" />
+            <Logo application="frapy" type="full" variant="light" />
           </div>
           <div
             className="app-wrapper disabled"
@@ -48,7 +48,7 @@ const AppSelector = ({ onClick, light }: IProps) => {
             //   onClick && onClick({ selectedApp: "frapy-market" });
             // }}
           >
-            <Logo application="frapy-market" type="full" />
+            <Logo application="frapy-market" type="full" variant="light" />
             <div className="coming-soon-wrapper">(Coming soon)</div>
           </div>
         </div>

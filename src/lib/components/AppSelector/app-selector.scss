@@ -27,6 +27,7 @@
   .apps-wrapper {
     position: absolute;
     top: 100%;
+    z-index: 1030;
 
     .app-wrapper {
       width: 300px;
