@@ -24,35 +24,30 @@ function SidenavMenuItem({
   labelText,
   active,
 }: IProps): ReactElement {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  switch (labelText ? true : false) {
-    case true:
-      return (
-        <div className="sidenav-sub-menu-wrapper">
-          <div
-            className="sidenav-sub-menu-title"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <div className={`icon-wrapper ${isOpen && "active"}`}>
-              <KeyboardArrowRight size={24} />
-            </div>
-            <span>{labelText}</span>
-          </div>
-          {isOpen && <div className="sidenav-sub-menu-items">{children}</div>}
+  return labelText ? (
+    <div className="sidenav-sub-menu-wrapper">
+      <div
+        className="sidenav-sub-menu-title"
+        // onClick={() => setIsOpen(!isOpen)}
+      >
+        <div
+          className={`icon-wrapper 
+  
+        `}
+        >
+          <KeyboardArrowRight size={24} />
         </div>
-      );
-
-    case false:
-      return (
-        <div className={`sidenav-menu-item-wrapper ${active && "active"}`}>
-          {children}
-        </div>
-      );
-
-    default:
-      return <></>;
-  }
+        <span>{labelText}</span>
+      </div>
+      {<div className="sidenav-sub-menu-items">{children}</div>}
+    </div>
+  ) : (
+    <div className={`sidenav-menu-item-wrapper ${active && "active"}`}>
+      {children}
+    </div>
+  );
 }
 
 SidenavMenuItem.defaultProps = defaultProps;
