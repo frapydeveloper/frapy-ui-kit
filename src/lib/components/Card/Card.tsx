@@ -11,6 +11,7 @@ interface IOptionalProps {
   primaryColor?: string;
   secondaryColor?: string;
   direction?: string;
+  fullWidth?: boolean;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
@@ -30,6 +31,7 @@ function Card({
   primaryColor,
   secondaryColor,
   direction,
+  fullWidth,
 }: IProps): ReactElement {
   const setStyle = () => {
     switch (backgroundStyle) {
@@ -46,7 +48,7 @@ function Card({
 
   return (
     <div
-      className={`card-wrapper ${padding} `}
+      className={`card-wrapper ${padding} ${fullWidth && "full-width"}`}
       style={{ background: setStyle() }}
     >
       {children}
