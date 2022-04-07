@@ -7,18 +7,18 @@ import { onClickOutside } from "@frapy/utils";
 
 interface IRequiredProps {}
 
-interface IOptionalProps {
+export interface IOptionalProps {
   light?: boolean;
   onClick?: Function | undefined;
 }
 
-interface IProps extends IRequiredProps, IOptionalProps {}
+export interface IProps extends IRequiredProps, IOptionalProps {}
 
 const defaultProps: IOptionalProps = {
   light: false,
 };
 
-function AppSelector({ onClick, light }: IProps): ReactElement {
+const AppSelector = ({ onClick, light }: IProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const target = useRef(null);
@@ -27,7 +27,7 @@ function AppSelector({ onClick, light }: IProps): ReactElement {
   return (
     <div className={`app-selector-container ${light && "light"}`} ref={target}>
       <div className="app-selector-wrapper" onClick={() => setIsOpen(!isOpen)}>
-        <Logo type="full" />
+        <Logo application="frapy" type="full" />
         <ArrowDropDown />
       </div>
       {isOpen && (
@@ -39,7 +39,7 @@ function AppSelector({ onClick, light }: IProps): ReactElement {
               onClick && onClick({ selectedApp: "frapy" });
             }}
           >
-            <Logo type="full" />
+            <Logo application="frapy" type="full" />
           </div>
           <div
             className="app-wrapper disabled"
@@ -48,14 +48,14 @@ function AppSelector({ onClick, light }: IProps): ReactElement {
             //   onClick && onClick({ selectedApp: "frapy-market" });
             // }}
           >
-            <Logo type="full" />
+            <Logo application="frapy-market" type="full" />
             <div className="coming-soon-wrapper">(Coming soon)</div>
           </div>
         </div>
       )}
     </div>
   );
-}
+};
 
 AppSelector.defaultProps = defaultProps;
 

@@ -1,5 +1,6 @@
 import "./style/global.scss";
 
+import AppSelector from "./components/AppSelector";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import Divider from "./components/Divider";
@@ -13,6 +14,7 @@ import Typography from "./components/Typography";
 import Variable from "./components/Variable";
 
 export {
+  AppSelector,
   Button,
   Card,
   Divider,
