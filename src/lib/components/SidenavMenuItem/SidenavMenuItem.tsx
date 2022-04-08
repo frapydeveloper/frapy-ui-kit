@@ -26,13 +26,13 @@ function SidenavMenuItem({
   active,
   onClick,
 }: IProps): ReactElement {
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return labelText ? (
     <div className="sidenav-sub-menu-wrapper">
       <div
         className="sidenav-sub-menu-title"
-        // onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <div
           className={`icon-wrapper 
