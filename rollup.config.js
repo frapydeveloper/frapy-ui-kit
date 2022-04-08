@@ -13,6 +13,7 @@ export default [
         dir: "dist",
       },
     ],
+    external: ["react", "react-dom"],
     plugins: [
       scss({
         output: "dist/style.min.css",

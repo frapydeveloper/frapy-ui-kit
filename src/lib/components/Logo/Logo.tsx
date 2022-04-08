@@ -2,62 +2,101 @@ import "./logo.scss";
 
 import React, { ReactElement } from "react";
 
-interface IRequiredProps {}
+interface IRequiredProps {
+  application: "frapy" | "frapy-market";
+  type: "small" | "full";
+}
 
 interface IOptionalProps {
-  type?: "small" | "full";
   size?: number;
-  light?: boolean;
+  variant?: "light" | "dark";
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = { type: "small", size: 32, light: true };
+const defaultProps: IOptionalProps = {
+  size: 32,
+  variant: "dark",
+};
 
-function Logo({ type, size, light }: IProps): ReactElement {
-  return (
-    <div className="logo-wrapper">
-      {light ? (
-        <React.Fragment>
-          {type === "small" && (
-            <img
-              src={"https://static.frapy.co/assets/logo/frapy-logo.svg"}
-              alt="frapy-logo"
-              height={size}
-            />
-          )}
-          {type === "full" && (
-            <img
-              src={
-                "https://static.frapy.co/assets/logo/frapy-full-logo-dark.svg"
-              }
-              alt="frapy-full-logo"
-              height={size}
-            />
-          )}
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          {type === "small" && (
-            <img
-              src={"https://static.frapy.co/assets/logo/frapy-logo.svg"}
-              alt="frapy-logo"
-              height={size}
-            />
-          )}
-          {type === "full" && (
-            <img
-              src={
-                "https://static.frapy.co/assets/logo/frapy-full-logo-light.svg"
-              }
-              alt="frapy-full-logo"
-              height={size}
-            />
-          )}
-        </React.Fragment>
-      )}
-    </div>
-  );
+function Logo({ application, type, size, variant }: IProps): ReactElement {
+  switch (type) {
+    case "small":
+      return (
+        <img
+          src={"https://static.frapy.co/assets/logo/frapy-logo.svg"}
+          alt="frapy-logo"
+          height={size}
+        />
+      );
+
+    case "full":
+      switch (application) {
+        case "frapy":
+          switch (variant) {
+            case "light":
+              return (
+                <img
+                  src={
+                    "https://static.frapy.co/assets/logo/frapy-full-logo-light.svg"
+                  }
+                  alt="frapy-full-logo"
+                  height={size}
+                />
+              );
+
+            case "dark":
+              return (
+                <img
+                  src={
+                    "https://static.frapy.co/assets/logo/frapy-full-logo-dark.svg"
+                  }
+                  alt="frapy-full-logo"
+                  height={size}
+                />
+              );
+
+            default:
+              break;
+          }
+
+        case "frapy-market":
+          switch (variant) {
+            case "light":
+              return (
+                <img
+                  src={
+                    "https://static.frapy.co/assets/logo/frapy-market-logo-light.svg"
+                  }
+                  alt="frapy-full-logo"
+                  height={size}
+                />
+              );
+
+            case "dark":
+              return (
+                <img
+                  src={
+                    "https://static.frapy.co/assets/logo/frapy-market-logo-dark.svg"
+                  }
+                  alt="frapy-full-logo"
+                  height={size}
+                />
+              );
+
+            default:
+              break;
+          }
+
+        default:
+          break;
+      }
+
+    default:
+      break;
+  }
+
+  return <></>;
 }
 
 Logo.defaultProps = defaultProps;

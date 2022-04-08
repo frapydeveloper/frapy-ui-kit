@@ -1,4 +1,7 @@
 @import "../../style/global.scss";
 
 .logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
