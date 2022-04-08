@@ -15,6 +15,7 @@ interface IOptionalProps {
   labelText?: string;
   hideLabel?: boolean;
   active?: boolean;
+  onClick?: Function | undefined;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
@@ -28,6 +29,7 @@ function SidenavMenuItem({
   children,
   labelText,
   active,
+  onClick,
 }: IProps): ReactElement {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -42,10 +44,20 @@ function SidenavMenuItem({
         </div>
         <span>{labelText}</span>
       </div>
-      {isOpen && <div className="sidenav-sub-menu-items">{children}</div>}
+      {isOpen && (
+        <div
+          className="sidenav-sub-menu-items"
+          onClick={() => onClick && onClick()}
+        >
+          {children}
+        </div>
+      )}
     </div>
   ) : (
-    <div className={`sidenav-menu-item-wrapper ${active && "active"}`}>
+    <div
+      className={`sidenav-menu-item-wrapper ${active && "active"}`}
+      onClick={() => onClick && onClick()}
+    >
       {children}
     </div>
   );
