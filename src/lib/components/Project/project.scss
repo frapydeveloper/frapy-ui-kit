@@ -1,7 +1,7 @@
 @import "../../style/global.scss";
 
 .project-container {
-  min-width: 375px;
+  min-width: 300px;
   border-radius: 4px;
   border: 1px solid $ui-03;
   background-color: $ui-01;
@@ -9,6 +9,12 @@
   align-items: center;
   padding: 16px 24px;
   box-sizing: border-box;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+
+  &:hover {
+    background-color: $ui-02;
+  }
 
   &.full-width {
     width: 100%;
