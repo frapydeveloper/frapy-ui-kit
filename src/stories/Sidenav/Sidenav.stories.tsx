@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { History } from "@frapy/icons";
 
 import Sidenav from "../../lib/components/Sidenav";
 import SidenavMenu from "../../lib/components/SidenavMenu";
@@ -26,6 +27,7 @@ export const Example = Template.bind({});
 Example.args = {
   children: (
     <SidenavMenu labelText="Items">
+      <SidenavMenuItem icon={<History size={20} />}>Item1</SidenavMenuItem>
       <SidenavMenuItem labelText="Sub-menu 1">
         <SidenavMenuItem>Item1</SidenavMenuItem>
         <SidenavMenuItem>Item2</SidenavMenuItem>

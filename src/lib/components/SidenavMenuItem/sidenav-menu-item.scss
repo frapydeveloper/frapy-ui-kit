@@ -77,6 +77,9 @@
   padding: 6px 16px;
   box-sizing: border-box;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
   cursor: pointer;
   transition: 100ms ease-in-out;
 
@@ -90,5 +93,11 @@
     background-color: $primary-01-25;
     color: $primary-01;
     font-weight: 500;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
