@@ -77,6 +77,21 @@
       color: $primary-01;
     }
 
+    &.link {
+      padding: 0px 12px;
+      background-color: transparent;
+      color: $primary-01;
+
+      &:hover {
+        background-color: transparent;
+        color: $primary-01;
+
+        svg {
+          fill: $primary-01;
+        }
+      }
+    }
+
     &:hover {
       background-color: $primary-01;
       color: $text-01;
