@@ -2,7 +2,7 @@ import "./modal.scss";
 
 import React, { ReactElement, useRef } from "react";
 import Button from "../Button";
-import { ArrowDropDown } from "@frapy/icons";
+import { Close } from "@frapy/icons";
 import { onClickOutside } from "@frapy/utils";
 
 interface IRequiredProps {
@@ -42,7 +42,7 @@ function Modal({
           <Button
             color="secondary"
             kind="tertiary"
-            renderIcon={<ArrowDropDown />}
+            renderIcon={<Close size={16} color={"#121212"} />}
             hasIconOnly
             onClick={() => onModalClose()}
           />
