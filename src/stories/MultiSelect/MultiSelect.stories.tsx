@@ -53,7 +53,11 @@ const Template: ComponentStory<typeof MultiSelect> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  items: [{ name: "Item 1" }, { name: "Item 2" }, { name: "Item 3" }],
+  items: [
+    { value: 0, name: "Item 1" },
+    { value: 1, name: "Item 2" },
+    { value: 2, name: "Item 3" },
+  ],
   direction: "bottom",
   titleText: "Select an option(s)",
   itemToString: ({ item }: any) => <div>{item?.name}</div>,
