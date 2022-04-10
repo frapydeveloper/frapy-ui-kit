@@ -29,6 +29,7 @@ function MultiSelectItem({
       }`}
       onClick={() => !disabled && onClick && onClick(itemToElement)}
     >
+      {console.log({ selected })}
       {selected && <Add size={16} />}
       <div>{itemToString({ item: itemToElement })}</div>
     </div>

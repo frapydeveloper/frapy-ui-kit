@@ -44,19 +44,13 @@ function MultiSelect({
   const target = useRef(null);
   onClickOutside({ target, callback: setIsDropdownActive });
 
-  // useEffect(() => {
-  //   if (initialSelectedItem) {
-  //     setSelected(items[initialSelectedItem]);
-  //   }
-  // }, []);
-
   const addSelection = (item: any) => {
     let array = selected;
 
     const index = array.findIndex((element: any) => element === item);
 
     if (index < 0) {
-      array.push(selectionKey ? item[selectionKey] : item);
+      array.push(item);
 
       onChange && onChange({ selectedItems: array });
 
@@ -67,9 +61,7 @@ function MultiSelect({
   const removeSelection = (item: any) => {
     let array = selected;
 
-    const index = array.findIndex(
-      (element: any) => element === (selectionKey ? item[selectionKey] : item)
-    );
+    const index = array.findIndex((element: any) => element === item);
 
     array.splice(index, 1);
 
@@ -109,7 +101,10 @@ function MultiSelect({
                       className="selection"
                       onClick={() => removeSelection(item)}
                     >
-                      {itemToString && itemToString({ item })}
+                      {itemToString &&
+                        itemToString({
+                          item,
+                        })}
                     </div>
                   )
               )}
@@ -132,11 +127,11 @@ function MultiSelect({
           <ArrowDropDown />
         </div>
       </div>
-      {selected?.length > 0 && (
+      {/* {selected?.length > 0 && (
         <div className="clear-selection" onClick={() => clearSelection()}>
           Clear
         </div>
-      )}
+      )} */}
       {isDropdownActive && (
         <div className={`dropdown-wrapper ${"direction-" + direction} `}>
           {items?.map((item: any, index: number) => (
@@ -147,8 +142,8 @@ function MultiSelect({
               itemToElement={<div>{item}</div>}
               onClick={(event: any) => {
                 selected.find((element: any) => element === item)
-                  ? removeSelection(items[index])
-                  : addSelection(items[index]);
+                  ? removeSelection(item)
+                  : addSelection(item);
               }}
               selected={selected.find((element: any) => element === item)}
               disabled={item?.disabled}

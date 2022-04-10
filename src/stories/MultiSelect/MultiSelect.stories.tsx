@@ -61,3 +61,19 @@ Default.args = {
   fullWidth: false,
   disabled: false,
 };
+
+export const Advanced = Template.bind({});
+Advanced.args = {
+  items: [
+    { value: 0, name: "Item 1" },
+    { value: 1, name: "Item 2" },
+    { value: 2, name: "Item 3" },
+  ],
+  direction: "bottom",
+  titleText: "Select an option(s)",
+  itemToString: ({ item }: any) => <div>{item?.name}</div>,
+  size: "sm",
+  fullWidth: false,
+  disabled: false,
+  selectionKey: "value",
+};
