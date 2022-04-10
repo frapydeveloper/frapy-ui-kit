@@ -47,10 +47,16 @@ function MultiSelect({
   const addSelection = (item: any) => {
     let array = selected;
 
-    const index = array.findIndex((element: any) => element === item);
+    const index = array.findIndex(
+      (element: any) => element === (selectionKey ? item[selectionKey] : item)
+    );
 
     if (index < 0) {
-      array.push(item);
+      if (selectionKey) {
+        array.push(item[selectionKey]);
+      } else {
+        array.push(item);
+      }
 
       onChange && onChange({ selectedItems: array });
 
@@ -61,7 +67,9 @@ function MultiSelect({
   const removeSelection = (item: any) => {
     let array = selected;
 
-    const index = array.findIndex((element: any) => element === item);
+    const index = array.findIndex(
+      (element: any) => element === (selectionKey ? item[selectionKey] : item)
+    );
 
     array.splice(index, 1);
 
@@ -103,7 +111,7 @@ function MultiSelect({
                     >
                       {itemToString &&
                         itemToString({
-                          item,
+                          item: selectionKey ? items[item] : item,
                         })}
                     </div>
                   )
@@ -141,11 +149,13 @@ function MultiSelect({
               }
               itemToElement={<div>{item}</div>}
               onClick={(event: any) => {
-                selected.find((element: any) => element === item)
+                selected.indexOf(selectionKey ? item[selectionKey] : item) > -1
                   ? removeSelection(item)
                   : addSelection(item);
               }}
-              selected={selected.find((element: any) => element === item)}
+              selected={
+                selected.indexOf(selectionKey ? item[selectionKey] : item) > -1
+              }
               disabled={item?.disabled}
             />
           ))}
