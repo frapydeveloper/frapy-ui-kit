@@ -1,0 +1,15 @@
+@import "../../style/colors.scss";
+
+.dropdown-item-container {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+
+  &:hover {
+    background-color: $ui-03;
+  }
+}
