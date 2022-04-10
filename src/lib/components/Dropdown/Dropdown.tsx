@@ -81,6 +81,7 @@ function Dropdown({
                 setSelected(items[index]);
                 setIsDropdownActive(false);
               }}
+              disabled={item?.disabled}
             />
           ))}
         </div>
