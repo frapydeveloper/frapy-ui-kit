@@ -4,6 +4,7 @@ import AppSelector from "./components/AppSelector";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import Divider from "./components/Divider";
+import Dropdown from "./components/Dropdown";
 import Input from "./components/Input";
 import Loading from "./components/Loading";
 import Logo from "./components/Logo";
@@ -22,6 +23,7 @@ export {
   Button,
   Card,
   Divider,
+  Dropdown,
   Input,
   Loading,
   Logo,
