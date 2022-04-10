@@ -5,6 +5,7 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import Divider from "./components/Divider";
 import Input from "./components/Input";
+import Loading from "./components/Loading";
 import Logo from "./components/Logo";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
@@ -22,6 +23,7 @@ export {
   Card,
   Divider,
   Input,
+  Loading,
   Logo,
   Modal,
   Navbar,
