@@ -9,6 +9,7 @@ import Input from "./components/Input";
 import Loading from "./components/Loading";
 import Logo from "./components/Logo";
 import Modal from "./components/Modal";
+import MultiSelect from "./components/MultiSelect";
 import Navbar from "./components/Navbar";
 import Project from "./components/Project";
 import SearchBox from "./components/SearchBox";
@@ -28,6 +29,7 @@ export {
   Loading,
   Logo,
   Modal,
+  MultiSelect,
   Navbar,
   Project,
   SearchBox,
