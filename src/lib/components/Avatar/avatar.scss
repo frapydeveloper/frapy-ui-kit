@@ -1,0 +1,82 @@
+@import "../../style/global.scss";
+
+.avatar-container {
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  &.full {
+    column-gap: 4px;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-01;
+    color: $text-01;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &.sm {
+    .icon-wrapper {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+
+    .name-wrapper {
+      font-size: 12px;
+    }
+  }
+
+  &.md {
+    column-gap: 8px;
+
+    .icon-wrapper {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+    }
+
+    .name-wrapper {
+      font-size: 14px;
+    }
+  }
+
+  &.lg {
+    column-gap: 12px;
+
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      font-size: 16px;
+    }
+
+    .name-wrapper {
+      font-size: 16px;
+    }
+  }
+
+  &.xlg {
+    column-gap: 16px;
+
+    .icon-wrapper {
+      width: 64px;
+      height: 64px;
+      font-size: 20px;
+    }
+
+    .name-wrapper {
+      font-size: 20px;
+    }
+  }
+}
