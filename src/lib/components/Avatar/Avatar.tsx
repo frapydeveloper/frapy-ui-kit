@@ -1,6 +1,7 @@
 import "./avatar.scss";
 
 import React, { ReactElement } from "react";
+import { stringToColour } from "@frapy/utils";
 
 interface IRequiredProps {
   name: string;
@@ -32,7 +33,10 @@ function Avatar({
           <img src={avatar} alt="avatar-img" />
         </div>
       ) : (
-        <div className={`icon-wrapper`}>
+        <div
+          className={`icon-wrapper`}
+          style={{ backgroundColor: stringToColour(name) }}
+        >
           {name?.split(" ")[0]?.substring(0, 1)}
           {name?.split(" ")[1]?.substring(0, 1)}
         </div>
