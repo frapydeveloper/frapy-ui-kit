@@ -9,6 +9,7 @@ interface IRequiredProps {
 }
 
 interface IOptionalProps {
+  id?: string;
   onClick?: Function | undefined;
   fullWidth?: boolean;
   icon?: any;
@@ -18,6 +19,7 @@ interface IOptionalProps {
 interface IProps extends IRequiredProps, IOptionalProps {}
 
 function Project({
+  id,
   labelText,
   createdAt,
   onClick,
@@ -27,6 +29,7 @@ function Project({
 }: IProps): ReactElement {
   return (
     <div
+      id={id}
       className={`project-container ${fullWidth && "full-width"}`}
       onClick={() => onClick && onClick()}
     >
