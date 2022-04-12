@@ -1,5 +1,3 @@
-import "./context-menu-item.scss";
-
 import React from "react";
 
 interface IRequiredProps {}

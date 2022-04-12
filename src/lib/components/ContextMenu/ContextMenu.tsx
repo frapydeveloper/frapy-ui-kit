@@ -19,7 +19,10 @@ function ContextMenu({ id, children }: IContextMenu) {
 
   if (show) {
     return (
-      <ul className="menu" style={{ top: anchorPoint.y, left: anchorPoint.x }}>
+      <ul
+        className="context-menu"
+        style={{ top: anchorPoint.y, left: anchorPoint.x }}
+      >
         {children}
       </ul>
     );

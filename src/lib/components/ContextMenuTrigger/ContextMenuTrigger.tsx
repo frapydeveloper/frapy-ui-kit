@@ -14,10 +14,6 @@ function ContextMenuTrigger({
   id,
   children,
 }: IContextMenuTrigger): ReactElement {
-  // const clones = React.Children.map(children, (child: any) => {
-  //   return React.cloneElement(child, { id });
-  // });
-
   return React.cloneElement(children, { id });
 }
 
