@@ -4,6 +4,9 @@ import AppSelector from "./components/AppSelector";
 import Avatar from "./components/Avatar";
 import Button from "./components/Button";
 import Card from "./components/Card";
+import ContextMenu from "./components/ContextMenu";
+import ContextMenuItem from "./components/ContextMenuItem";
+import ContextMenuTrigger from "./components/ContextMenuTrigger";
 import Divider from "./components/Divider";
 import Dropdown from "./components/Dropdown";
 import Input from "./components/Input";
@@ -25,6 +28,9 @@ export {
   Avatar,
   Button,
   Card,
+  ContextMenu,
+  ContextMenuItem,
+  ContextMenuTrigger,
   Divider,
   Dropdown,
   Input,
