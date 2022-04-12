@@ -2,7 +2,7 @@ import "./context-menu.scss";
 
 import React from "react";
 
-import useContextMenu from "../../../../../frapy-utils/src/lib/hooks/useContextMenu";
+import { useContextMenu } from "@frapy/utils";
 
 interface IRequiredProps {
   id: string;
