@@ -20,6 +20,7 @@ import SearchBox from "./components/SearchBox";
 import Sidenav from "./components/Sidenav";
 import SidenavMenu from "./components/SidenavMenu";
 import SidenavMenuItem from "./components/SidenavMenuItem";
+import Stack from "./components/Stack/Stack";
 import Typography from "./components/Typography";
 import Variable from "./components/Variable";
 
@@ -44,6 +45,7 @@ export {
   Sidenav,
   SidenavMenu,
   SidenavMenuItem,
+  Stack,
   Typography,
   Variable,
 };
