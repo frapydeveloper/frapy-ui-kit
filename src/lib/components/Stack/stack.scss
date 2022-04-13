@@ -1,0 +1,197 @@
+@import "../../style/global.scss";
+
+.button-container {
+  border-radius: 4px;
+  min-height: 32px;
+  min-width: 32px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+
+  &.sm {
+    padding: 8px 12px;
+    min-height: 32px;
+  }
+
+  &.md {
+    padding: 12px 18px;
+    min-height: 36px;
+  }
+
+  &.lg {
+    padding: 16px 24px;
+    min-height: 42px;
+  }
+
+  &.xlg {
+    padding: 20px 32px;
+    min-height: 48px;
+  }
+
+  &.full-width {
+    width: 100% !important;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+
+    .button-content {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+    }
+  }
+
+  &.icon-button {
+    padding: 0;
+  }
+
+  &.primary {
+    &.normal {
+      background-color: $primary-01;
+      color: $text-01;
+    }
+
+    &.ghost {
+      background-color: transparent;
+      color: $primary-01;
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: 1px solid $primary-01;
+      color: $primary-01;
+    }
+
+    &.link {
+      min-height: 0px;
+      padding: 0px 12px;
+      background-color: transparent;
+      color: $primary-01;
+
+      &:hover {
+        background-color: transparent;
+        color: $primary-01;
+
+        svg {
+          fill: $primary-01;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $primary-01;
+      color: $text-01;
+
+      svg {
+        fill: $text-01;
+      }
+    }
+  }
+
+  &.secondary {
+    &.normal {
+      background-color: $ui-03;
+      color: $text-01;
+    }
+
+    &.ghost {
+      background-color: transparent;
+      color: $ui-03;
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: 1px solid $ui-03;
+      color: $ui-07;
+    }
+  }
+
+  &.warning {
+    &.normal {
+      background-color: $primary-02;
+      color: $text-01;
+    }
+
+    &.ghost {
+      background-color: transparent;
+      color: $primary-02;
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: 1px solid $primary-02;
+      color: $primary-02;
+    }
+  }
+
+  &.danger {
+    &.normal {
+      background-color: $secondary-02;
+      color: $text-01;
+    }
+
+    &.ghost {
+      background-color: transparent;
+      color: $secondary-02;
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: 1px solid $secondary-02;
+      color: $secondary-02;
+    }
+  }
+
+  &.success {
+    &.normal {
+      background-color: $primary-04;
+      color: $text-01;
+    }
+
+    &.ghost {
+      background-color: transparent;
+      color: $primary-04;
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: 1px solid $primary-04;
+      color: $primary-04;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    &.normal {
+      background-color: $ui-06 !important;
+      color: $text-01;
+    }
+
+    &.ghost {
+      background-color: transparent;
+      color: $ui-06 !important;
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: 1px solid $ui-06 !important;
+      color: $ui-06 !important;
+    }
+  }
+}
