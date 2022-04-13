@@ -1,4 +1,6 @@
 .stack-container {
+  box-sizing: border-box;
+
   &.full-width {
     width: 100%;
   }
