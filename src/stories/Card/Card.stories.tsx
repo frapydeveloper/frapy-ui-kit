@@ -24,5 +24,4 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   children: "Card content",
-  padding: [16, 16],
 };
