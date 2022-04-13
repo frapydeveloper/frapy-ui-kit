@@ -15,6 +15,8 @@ interface IOptionalProps {
   columnGap?: number;
   columnGapUnit?: "px" | "rem" | "em";
   direction?: "row" | "column" | "row-reverse" | "column-reverse";
+  alignItem?: "flex-start" | "center" | "flex-end" | "space-between";
+  justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
   fullWidth?: boolean;
   styles?: any;
 }
@@ -32,6 +34,8 @@ function Stack({
   columnGap,
   columnGapUnit = "px",
   direction = "column",
+  alignItem = "flex-start",
+  justifyContent = "flex-start",
   fullWidth = true,
   styles,
 }: IProps): ReactElement {
@@ -73,6 +77,8 @@ function Stack({
         flexDirection: direction,
         columnGap: `${columnGap}${columnGapUnit}`,
         rowGap: `${rowGap}${rowGapUnit}`,
+        alignItems: alignItem,
+        justifyContent: justifyContent,
         ...styles,
       }}
     >
