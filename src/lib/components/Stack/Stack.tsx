@@ -1,5 +1,3 @@
-import "./button.scss";
-
 import React, { ReactElement } from "react";
 
 interface IRequiredProps {}
