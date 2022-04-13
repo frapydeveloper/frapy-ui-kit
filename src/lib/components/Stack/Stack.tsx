@@ -1,3 +1,5 @@
+import "./stack.scss";
+
 import React, { ReactElement } from "react";
 
 interface IRequiredProps {}
@@ -13,6 +15,7 @@ interface IOptionalProps {
   columnGap?: number;
   columnGapUnit?: "px" | "rem" | "em";
   direction?: "row" | "column" | "row-reverse" | "column-reverse";
+  fullWidth?: boolean;
   styles?: any;
 }
 
@@ -29,6 +32,7 @@ function Stack({
   columnGap,
   columnGapUnit = "px",
   direction = "column",
+  fullWidth = true,
   styles,
 }: IProps): ReactElement {
   const setPadding = () => {
@@ -61,7 +65,7 @@ function Stack({
 
   return (
     <div
-      className="stack-container"
+      className={`stack-container ${fullWidth && "full-width"}`}
       style={{
         padding: setPadding(),
         margin: setMargin(),
