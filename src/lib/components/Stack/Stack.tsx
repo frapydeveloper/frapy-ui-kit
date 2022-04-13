@@ -4,7 +4,7 @@ interface IRequiredProps {}
 
 interface IOptionalProps {
   children?: JSX.Element | JSX.Element[] | string;
-  padding: [number] | [number, number] | [number, number, number, number];
+  padding?: [number] | [number, number] | [number, number, number, number];
   paddingUnit?: "px" | "rem" | "em";
   margin?: [number] | [number, number] | [number, number, number, number];
   marginUnit?: "px" | "rem" | "em";
