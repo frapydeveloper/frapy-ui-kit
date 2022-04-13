@@ -4,9 +4,9 @@ interface IRequiredProps {}
 
 interface IOptionalProps {
   children?: JSX.Element | JSX.Element[] | string;
-  padding?: [number, number];
+  padding: [number] | [number, number] | [number, number, number, number];
   paddingUnit?: "px" | "rem" | "em";
-  margin?: [number, number];
+  margin?: [number] | [number, number] | [number, number, number, number];
   marginUnit?: "px" | "rem" | "em";
   rowGap?: number;
   rowGapUnit?: "px" | "rem" | "em";
@@ -20,9 +20,9 @@ interface IProps extends IRequiredProps, IOptionalProps {}
 
 function Stack({
   children,
-  padding,
+  padding = [0],
   paddingUnit = "px",
-  margin,
+  margin = [0],
   marginUnit = "px",
   rowGap,
   rowGapUnit = "px",
@@ -31,16 +31,40 @@ function Stack({
   direction = "column",
   styles,
 }: IProps): ReactElement {
+  const setPadding = () => {
+    switch (padding?.length) {
+      case 1:
+        return `${padding[0]}${paddingUnit}`;
+      case 2:
+        return `${padding[0]}${paddingUnit} ${padding[1]}${paddingUnit}`;
+      case 4:
+        return `${padding[0]}${paddingUnit} ${padding[1]}${paddingUnit} ${padding[2]}${paddingUnit} ${padding[3]}${paddingUnit}`;
+
+      default:
+        break;
+    }
+  };
+
+  const setMargin = () => {
+    switch (margin?.length) {
+      case 1:
+        return `${margin[0]}${marginUnit}`;
+      case 2:
+        return `${margin[0]}${marginUnit} ${margin[1]}${marginUnit}`;
+      case 4:
+        return `${margin[0]}${marginUnit} ${margin[1]}${marginUnit} ${margin[2]}${marginUnit} ${margin[3]}${marginUnit}`;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div
       className="stack-container"
       style={{
-        padding: `${padding ? padding[0] : 0}${paddingUnit} ${
-          padding ? padding[1] : 0
-        }${paddingUnit}`,
-        margin: `${margin ? margin[0] : 0}${marginUnit} ${
-          margin ? margin[1] : 0
-        }${marginUnit}`,
+        padding: setPadding(),
+        margin: setMargin(),
         display: "flex",
         flexDirection: direction,
         columnGap: `${columnGap}${columnGapUnit}`,
