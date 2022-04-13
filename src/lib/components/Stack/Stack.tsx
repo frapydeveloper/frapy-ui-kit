@@ -18,6 +18,7 @@ interface IOptionalProps {
   alignItem?: "flex-start" | "center" | "flex-end" | "space-between";
   justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
   fullWidth?: boolean;
+  fullHeight?: boolean;
   styles?: any;
 }
 
@@ -37,6 +38,7 @@ function Stack({
   alignItem = "flex-start",
   justifyContent = "flex-start",
   fullWidth = true,
+  fullHeight = false,
   styles,
 }: IProps): ReactElement {
   const setPadding = () => {
@@ -69,7 +71,9 @@ function Stack({
 
   return (
     <div
-      className={`stack-container ${fullWidth && "full-width"}`}
+      className={`stack-container ${fullWidth && "full-width"} ${
+        fullHeight && "full-height"
+      }`}
       style={{
         padding: setPadding(),
         margin: setMargin(),
