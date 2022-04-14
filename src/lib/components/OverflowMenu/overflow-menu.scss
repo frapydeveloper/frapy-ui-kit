@@ -1,0 +1,52 @@
+@import "../../style/colors.scss";
+
+.overflow-menu-container {
+  position: relative;
+  display: inline-block;
+
+  &.light {
+    .overflow-menu-wrapper {
+      background-color: $ui-01;
+    }
+  }
+
+  .overflow-menu-wrapper {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: $ui-10;
+    z-index: 1040;
+    width: 250px;
+    padding: 8px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 20px #00000028;
+  }
+
+  &.light {
+    .overflow-menu-item-container {
+      color: $text-08;
+
+      &:hover {
+        background-color: $ui-03;
+        color: $text-10;
+      }
+    }
+  }
+
+  .overflow-menu-item-container {
+    padding: 0 16px;
+    height: 24px;
+    color: $text-02;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      background-color: $ui-09;
+      color: $text-01;
+    }
+  }
+}
