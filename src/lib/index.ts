@@ -4,6 +4,7 @@ import AppSelector from "./components/AppSelector";
 import Avatar from "./components/Avatar";
 import Button from "./components/Button";
 import Card from "./components/Card";
+import Checkbox from "./components/Checkbox";
 import ContextMenu from "./components/ContextMenu";
 import ContextMenuItem from "./components/ContextMenuItem";
 import ContextMenuTrigger from "./components/ContextMenuTrigger";
@@ -29,6 +30,7 @@ export {
   Avatar,
   Button,
   Card,
+  Checkbox,
   ContextMenu,
   ContextMenuItem,
   ContextMenuTrigger,
