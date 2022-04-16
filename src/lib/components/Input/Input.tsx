@@ -6,7 +6,7 @@ interface IRequiredProps {}
 
 interface IOptionalProps {
   id?: string;
-  type?: "text" | "number" | "date" | "color" | "time";
+  type?: "text" | "number" | "date" | "color" | "time" | "password" | "email";
   placeholder?: string;
   labelText?: string;
   hideLabel?: boolean;
