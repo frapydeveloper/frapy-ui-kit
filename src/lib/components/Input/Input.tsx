@@ -5,6 +5,7 @@ import React, { ReactElement } from "react";
 interface IRequiredProps {}
 
 interface IOptionalProps {
+  id?: string;
   type?: "text" | "number" | "date" | "color" | "time";
   placeholder?: string;
   labelText?: string;
@@ -20,6 +21,7 @@ interface IOptionalProps {
 interface IProps extends IRequiredProps, IOptionalProps {}
 
 function Input({
+  id,
   type = "text",
   placeholder,
   labelText,
@@ -33,6 +35,7 @@ function Input({
 }: IProps): ReactElement {
   return (
     <div
+      id={id}
       className={`input-wrapper ${fullWidth && "full-width"} ${
         error && "error"
       } ${disabled && "disabled"} ${showHint && "hint"}`}
