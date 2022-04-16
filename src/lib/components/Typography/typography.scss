@@ -1,5 +1,29 @@
 @import "../../style/global.scss";
 
+.typography-container {
+  -webkit-background-clip: text !important;
+
+  .primary {
+    color: $primary-01 !important;
+  }
+
+  .secondary {
+    color: $ui-08 !important;
+  }
+
+  .warning {
+    color: $secondary-01 !important;
+  }
+
+  .danger {
+    color: $secondary-02 !important;
+  }
+
+  .success {
+    color: $primary-04 !important;
+  }
+}
+
 h1 {
   font-size: 48px;
   font-weight: 500;
