@@ -7,6 +7,8 @@ interface IRequiredProps {}
 interface IOptionalProps {
   id?: string;
   type?: "text" | "number" | "date" | "color" | "time" | "password" | "email";
+  defaultValue?: string | number;
+  value?: string | number;
   placeholder?: string;
   labelText?: string;
   hideLabel?: boolean;
@@ -23,7 +25,9 @@ interface IProps extends IRequiredProps, IOptionalProps {}
 function Input({
   id,
   type = "text",
+  defaultValue,
   placeholder,
+  value,
   labelText,
   hideLabel = false,
   onChange,
@@ -43,6 +47,8 @@ function Input({
       {!hideLabel && <div className={`label-text`}>{labelText}</div>}
       <input
         type={type}
+        defaultValue={defaultValue && defaultValue}
+        value={value && value}
         onChange={(event) => onChange && onChange(event.target.value)}
         disabled={disabled}
         placeholder={placeholder}
