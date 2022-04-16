@@ -12,43 +12,41 @@ interface IOptionalProps {
   fullWidth?: boolean;
   onChange?: Function | undefined;
   disabled?: boolean;
+  error?: boolean;
+  showHint?: boolean;
+  hint?: string;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {
-  type: "text",
-  hideLabel: false,
-  fullWidth: false,
-  disabled: false,
-};
-
 function Input({
-  type,
+  type = "text",
   placeholder,
   labelText,
-  hideLabel,
+  hideLabel = false,
   onChange,
-  disabled,
-  fullWidth,
+  disabled = false,
+  fullWidth = false,
+  error = false,
+  showHint = false,
+  hint,
 }: IProps): ReactElement {
   return (
-    <div className={`input-wrapper ${fullWidth && "full-width"}`}>
-      {!hideLabel && (
-        <div className={`label-text ${disabled && "disabled"}`}>
-          {labelText}
-        </div>
-      )}
+    <div
+      className={`input-wrapper ${fullWidth && "full-width"} ${
+        error && "error"
+      } ${disabled && "disabled"} ${showHint && "hint"}`}
+    >
+      {!hideLabel && <div className={`label-text`}>{labelText}</div>}
       <input
         type={type}
         onChange={(event) => onChange && onChange(event.target.value)}
         disabled={disabled}
         placeholder={placeholder}
       />
+      {showHint && <div className={`hint-text`}>{hint && `${hint}`}</div>}
     </div>
   );
 }
-
-Input.defaultProps = defaultProps;
 
 export default Input;
