@@ -6,7 +6,7 @@ interface IRequiredProps {}
 
 interface IOptionalProps {
   color?: "primary" | "secondary" | "warning" | "danger" | "success";
-  kind?: "normal" | "ghost" | "tertiary";
+  kind?: "normal" | "ghost" | "tertiary" | "link";
   size?: "sm" | "md" | "lg" | "xlg";
   disabled?: boolean;
   fullWidth?: boolean;

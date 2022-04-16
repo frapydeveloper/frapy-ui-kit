@@ -1,0 +1,22 @@
+@import "../../style/colors.scss";
+
+.dropdown-item-container {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  font-size: 14px;
+
+  &:hover {
+    background-color: $ui-03;
+  }
+
+  &.disabled {
+    background-color: $ui-03;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
