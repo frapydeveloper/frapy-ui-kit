@@ -18,6 +18,7 @@ import MultiSelect from "./components/MultiSelect";
 import Navbar from "./components/Navbar";
 import OverflowMenu from "./components/OverflowMenu";
 import OverflowMenuItem from "./components/OverflowMenuItem";
+import PinInput from "./components/PinInput";
 import Project from "./components/Project";
 import SearchBox from "./components/SearchBox";
 import Sidenav from "./components/Sidenav";
@@ -46,6 +47,7 @@ export {
   Navbar,
   OverflowMenu,
   OverflowMenuItem,
+  PinInput,
   Project,
   SearchBox,
   Sidenav,
