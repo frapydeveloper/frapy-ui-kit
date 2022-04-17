@@ -1,6 +1,14 @@
 @import "../../style/global.scss";
 
 .pin-input-container {
+  &.error {
+    .pin-input-wrapper {
+      input {
+        border-color: $secondary-02;
+      }
+    }
+  }
+
   .pin-input-wrapper {
     display: flex;
     column-gap: 4px;
