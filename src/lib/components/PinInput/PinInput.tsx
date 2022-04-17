@@ -9,11 +9,19 @@ interface IRequiredProps {
 interface IOptionalProps {
   id?: string;
   onFilled?: Function;
+  onChange?: Function;
+  error?: boolean;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-function PinInput({ digits = 6, id, onFilled }: IProps): ReactElement {
+function PinInput({
+  digits = 6,
+  id,
+  onFilled,
+  onChange,
+  error,
+}: IProps): ReactElement {
   const [pin, setPin] = useState<string>("");
 
   const replaceCharacterAt = (index: number, replacement: string) => {
@@ -45,6 +53,8 @@ function PinInput({ digits = 6, id, onFilled }: IProps): ReactElement {
 
           if (nextField !== null) {
             nextField.focus();
+
+            // onChange && onChange({ pin: _pin });
           }
         }
       }
@@ -57,6 +67,14 @@ function PinInput({ digits = 6, id, onFilled }: IProps): ReactElement {
     if (e.keyCode === 8) {
       const { maxLength, value, name } = e.target;
       const [fieldName, fieldIndex] = name.split("-");
+
+      let _pin: string;
+
+      _pin = replaceCharacterAt(fieldIndex, value);
+
+      _pin = _pin.substring(0, _pin.length - 1);
+
+      // setPin(_pin);
 
       let fieldIntIndex = parseInt(fieldIndex, 10);
 
@@ -83,13 +101,15 @@ function PinInput({ digits = 6, id, onFilled }: IProps): ReactElement {
 
         if (nextField !== null) {
           nextField.focus();
+
+          onChange && onChange({ pin: _pin });
         }
       }
     }
   };
 
   return (
-    <div className="pin-input-container">
+    <div id={id} className={`pin-input-container ${error && "error"}`}>
       <div className="pin-input-wrapper">
         {[...Array(digits)]?.map((_: any, index: number) => (
           <input
