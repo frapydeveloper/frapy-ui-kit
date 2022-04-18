@@ -1,0 +1,28 @@
+@import "../../style/global.scss";
+
+.card-wrapper {
+  display: inline-block;
+  background-color: $ui-01;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  &.sm {
+    padding: 8px;
+  }
+
+  &.md {
+    padding: 16px;
+  }
+
+  &.lg {
+    padding: 32px;
+  }
+
+  &.full-width {
+    width: 100% !important;
+  }
+
+  &.full-height {
+    height: 100% !important;
+  }
+}

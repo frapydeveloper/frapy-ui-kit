@@ -1,0 +1,52 @@
+@import "../../style/global.scss";
+
+.project-container {
+  min-width: 300px;
+  border-radius: 4px;
+  border: 1px solid $ui-03;
+  background-color: $ui-01;
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+
+  &:hover {
+    background-color: $ui-02;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  .project-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    pointer-events: none;
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      border: 1px solid $primary-01;
+      background-color: $primary-01-25;
+    }
+
+    .project-details {
+      .name {
+        font-size: 14px;
+        font-weight: 600;
+        color: $ui-10;
+      }
+      .created-at {
+        font-size: 12px;
+        color: $ui-07;
+      }
+    }
+  }
+}
