@@ -14,34 +14,30 @@ interface IOptionalProps {
   onClick?: Function | undefined;
   renderIcon?: any;
   hasIconOnly?: boolean;
+  light?: boolean;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {
-  color: "primary",
-  kind: "normal",
-  size: "sm",
-  disabled: false,
-  fullWidth: false,
-};
-
 function Button({
-  color,
-  kind,
-  size,
-  disabled,
-  fullWidth,
+  color = "primary",
+  kind = "normal",
+  size = "sm",
+  disabled = false,
+  fullWidth = false,
   children,
   onClick,
   renderIcon,
   hasIconOnly,
+  light,
 }: IProps): ReactElement {
   return (
     <div
       className={`button-container ${color} ${kind} ${
         hasIconOnly && "icon-button"
-      } ${size} ${disabled && "disabled"} ${fullWidth && "full-width"}`}
+      } ${size} ${disabled && "disabled"} ${fullWidth && "full-width"} ${
+        light && "light"
+      }`}
       onClick={() => onClick && onClick()}
     >
       <div className="button-wrapper">
@@ -57,7 +53,5 @@ function Button({
     </div>
   );
 }
-
-Button.defaultProps = defaultProps;
 
 export default Button;
