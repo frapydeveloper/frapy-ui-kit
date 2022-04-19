@@ -15,6 +15,7 @@ interface IOptionalProps {
   fullWidth?: boolean;
   icon?: any;
   color?: string;
+  selected?: boolean;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
@@ -28,11 +29,14 @@ function Project({
   fullWidth,
   icon,
   color,
+  selected,
 }: IProps): ReactElement {
   return (
     <div
       id={id}
-      className={`project-container ${fullWidth && "full-width"}`}
+      className={`project-container ${fullWidth && "full-width"} ${
+        selected && "selected"
+      }`}
       onClick={() => onClick && onClick()}
       onDoubleClick={() => onDoubleClick && onDoubleClick()}
     >
