@@ -6,6 +6,7 @@ import { KeyboardArrowRight } from "@frapy/icons";
 interface IRequiredProps {}
 
 interface IOptionalProps {
+  id?: string;
   children?: any;
   labelText?: string;
   hideLabel?: boolean;
@@ -16,22 +17,19 @@ interface IOptionalProps {
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {
-  hideLabel: false,
-  active: false,
-};
-
 function SidenavMenuItem({
+  id,
   children,
   labelText,
-  active,
+  hideLabel = false,
+  active = false,
   onClick,
   icon,
 }: IProps): ReactElement {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return labelText ? (
-    <div className="sidenav-sub-menu-wrapper">
+    <div id={id} className="sidenav-sub-menu-wrapper">
       <div
         className="sidenav-sub-menu-title"
         onClick={() => setIsOpen(!isOpen)}
@@ -56,6 +54,7 @@ function SidenavMenuItem({
     </div>
   ) : (
     <div
+      id={id}
       className={`sidenav-menu-item-wrapper ${active && "active"}`}
       onClick={() => onClick && onClick()}
     >
@@ -64,7 +63,5 @@ function SidenavMenuItem({
     </div>
   );
 }
-
-SidenavMenuItem.defaultProps = defaultProps;
 
 export default SidenavMenuItem;
