@@ -1,0 +1,67 @@
+@import "../../style/global.scss";
+
+.textarea-wrapper {
+  width: 200px;
+
+  &.hint {
+    height: 84px;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.error {
+    .label-text {
+      color: $secondary-02;
+    }
+
+    .hint-text {
+      color: $secondary-02;
+    }
+
+    textarea {
+      border-color: $secondary-02;
+    }
+  }
+
+  &.disabled {
+    .label-text {
+      color: $ui-06;
+    }
+
+    .hint-text {
+      color: $secondary-02;
+    }
+  }
+
+  .label-text {
+    font-size: 12px;
+    color: $ui-08;
+    padding: 2px 4px;
+  }
+
+  .hint-text {
+    color: $ui-07;
+    font-size: 12px;
+    padding: 4px 4px;
+  }
+
+  textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid $ui-03;
+    color: $text-06;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    min-height: 36px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: $ui-06;
+    }
+  }
+}
