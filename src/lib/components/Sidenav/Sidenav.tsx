@@ -5,17 +5,18 @@ import React, { ReactElement } from "react";
 interface IRequiredProps {}
 
 interface IOptionalProps {
+  id?: string;
   children?: JSX.Element | JSX.Element[] | string;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {};
-
-function Sidenav({ children }: IProps): ReactElement {
-  return <div className="sidenav-wrapper">{children}</div>;
+function Sidenav({ id, children }: IProps): ReactElement {
+  return (
+    <div id={id} className="sidenav-wrapper">
+      {children}
+    </div>
+  );
 }
-
-Sidenav.defaultProps = defaultProps;
 
 export default Sidenav;

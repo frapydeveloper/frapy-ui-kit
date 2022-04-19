@@ -19,4 +19,5 @@ export const Default = Template.bind({});
 Default.args = {
   children: "Typography Title",
   type: "h1",
+  direction: "to right bottom",
 };

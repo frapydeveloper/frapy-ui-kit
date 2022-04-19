@@ -1,0 +1,46 @@
+@import "../../style/global.scss";
+
+@import "../../style/colors.scss";
+
+.loading-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $ui-01;
+
+  .loading-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    .loading-bar {
+      position: relative;
+      width: 200px;
+      height: 4px;
+      background-color: $ui-03;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .status-indicator {
+        position: absolute;
+        left: 100px;
+        width: 150px;
+        height: 100%;
+        background-color: $ui-10;
+        border-radius: 4px;
+        animation: 2s loadingAnimation infinite;
+
+        @keyframes loadingAnimation {
+          0% {
+            left: -150px;
+          }
+          100% {
+            left: 200px;
+          }
+        }
+      }
+    }
+  }
+}

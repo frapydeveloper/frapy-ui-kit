@@ -5,6 +5,7 @@ import React, { ReactElement } from "react";
 interface IRequiredProps {}
 
 interface IOptionalProps {
+  id?: string;
   children?: JSX.Element | JSX.Element[] | string;
   labelText?: string;
   hideLabel?: boolean;
@@ -13,20 +14,18 @@ interface IOptionalProps {
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {
-  labelText: "Menu Title",
-  hideLabel: false,
-};
-
-function SidenavMenu({ children, labelText, hideLabel }: IProps): ReactElement {
+function SidenavMenu({
+  id,
+  children,
+  labelText = "Menu Title",
+  hideLabel = false,
+}: IProps): ReactElement {
   return (
-    <div className="sidenav-menu-wrapper">
+    <div id={id} className="sidenav-menu-wrapper">
       {!hideLabel && <div className="sidenav-menu-title">{labelText}</div>}
       <div className="sidenav-menu-items">{children}</div>
     </div>
   );
 }
-
-SidenavMenu.defaultProps = defaultProps;
 
 export default SidenavMenu;
