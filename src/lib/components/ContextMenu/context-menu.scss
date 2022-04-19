@@ -1,0 +1,35 @@
+@import "../../style/colors.scss";
+
+.context-menu {
+  background-color: $ui-10;
+  border-radius: 2px;
+  padding: 8px 0;
+  width: 200px;
+  height: auto;
+  margin: 0;
+  position: fixed;
+  list-style: none;
+  box-shadow: 0 0 20px #00000028;
+
+  .context-menu-item {
+    padding: 0 16px;
+    height: 24px;
+    color: $text-02;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      background-color: $ui-09;
+      color: $text-01;
+    }
+  }
+
+  .divider {
+    border-bottom: 1px solid $ui-08;
+    margin: 8px;
+  }
+}

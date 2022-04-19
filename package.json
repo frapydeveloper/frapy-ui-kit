@@ -1,6 +1,6 @@
 {
   "name": "@frapy/ui-kit",
-  "version": "0.1.5",
+  "version": "0.2.9",
   "description": "Frapy UI Kit",
   "author": "Frapy",
   "keywords": [
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@frapy/icons": "^0.0.20",
-    "@frapy/utils": "^0.0.2",
+    "@frapy/utils": "^0.0.18",
     "@mdx-js/react": "^2.1.1",
     "@storybook/addon-docs": "^6.4.20",
     "@testing-library/jest-dom": "^5.16.2",
@@ -68,5 +68,17 @@
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.70.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

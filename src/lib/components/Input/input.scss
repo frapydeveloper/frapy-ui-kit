@@ -3,18 +3,48 @@
 .input-wrapper {
   width: 200px;
 
+  &.hint {
+    height: 84px;
+  }
+
   &.full-width {
     width: 100%;
+  }
+
+  &.error {
+    .label-text {
+      color: $secondary-02;
+    }
+
+    .hint-text {
+      color: $secondary-02;
+    }
+
+    input {
+      border-color: $secondary-02;
+    }
+  }
+
+  &.disabled {
+    .label-text {
+      color: $ui-06;
+    }
+
+    .hint-text {
+      color: $secondary-02;
+    }
   }
 
   .label-text {
     font-size: 12px;
     color: $ui-08;
     padding: 2px 4px;
+  }
 
-    &.disabled {
-      color: $ui-06;
-    }
+  .hint-text {
+    color: $ui-07;
+    font-size: 12px;
+    padding: 4px 4px;
   }
 
   input {

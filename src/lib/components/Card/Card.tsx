@@ -2,9 +2,7 @@ import "./card.scss";
 
 import React, { ReactElement } from "react";
 
-interface IRequiredProps {
-  padding: [number, number];
-}
+interface IRequiredProps {}
 
 interface IOptionalProps {
   children?: JSX.Element | JSX.Element[] | string;
@@ -12,28 +10,26 @@ interface IOptionalProps {
   primaryColor?: string;
   secondaryColor?: string;
   direction?: string;
+  width?: number;
+  height?: number;
   fullWidth?: boolean;
+  fullHeight?: boolean;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {
-  backgroundStyle: "solid",
-  primaryColor: "#ffffff",
-  secondaryColor: "#000000",
-  direction: "to right bottom",
-};
-
 function Card({
   children,
-  padding,
-  backgroundStyle,
-  primaryColor,
-  secondaryColor,
-  direction,
-  fullWidth,
+  backgroundStyle = "solid",
+  primaryColor = "#ffffff",
+  secondaryColor = "#000000",
+  direction = "to right bottom",
+  width,
+  height,
+  fullWidth = false,
+  fullHeight = false,
 }: IProps): ReactElement {
-  const setStyle = () => {
+  const setBackground = () => {
     switch (backgroundStyle) {
       case "solid":
         return primaryColor;
@@ -48,17 +44,18 @@ function Card({
 
   return (
     <div
-      className={`card-wrapper ${padding} ${fullWidth && "full-width"}`}
+      className={`card-wrapper ${fullWidth && "full-width"} ${
+        fullHeight && "full-height"
+      }`}
       style={{
-        background: setStyle(),
-        padding: `${padding[0]}px ${padding[1]}px`,
+        background: setBackground(),
+        width: `${width}px`,
+        height: `${height}px`,
       }}
     >
       {children}
     </div>
   );
 }
-
-Card.defaultProps = defaultProps;
 
 export default Card;
