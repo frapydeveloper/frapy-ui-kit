@@ -12,6 +12,10 @@
   cursor: pointer;
   transition: 100ms ease-in-out;
 
+  &.selected {
+    border: 1px solid $primary-01;
+  }
+
   &:hover {
     background-color: $ui-02;
   }
