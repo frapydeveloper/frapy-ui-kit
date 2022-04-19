@@ -16,6 +16,10 @@ import Logo from "./components/Logo";
 import Modal from "./components/Modal";
 import MultiSelect from "./components/MultiSelect";
 import Navbar from "./components/Navbar";
+import OverflowMenu from "./components/OverflowMenu";
+import OverflowMenuItem from "./components/OverflowMenuItem";
+import PasswordStrenght from "./components/PasswordStrenght";
+import PinInput from "./components/PinInput";
 import Project from "./components/Project";
 import SearchBox from "./components/SearchBox";
 import Sidenav from "./components/Sidenav";
@@ -42,6 +46,10 @@ export {
   Modal,
   MultiSelect,
   Navbar,
+  OverflowMenu,
+  OverflowMenuItem,
+  PasswordStrenght,
+  PinInput,
   Project,
   SearchBox,
   Sidenav,

@@ -33,27 +33,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const TextInput = Template.bind({});
-TextInput.args = {
+export const Default = Template.bind({});
+Default.args = {
   type: "text",
-};
-
-export const NumberInput = Template.bind({});
-NumberInput.args = {
-  type: "number",
-};
-
-export const DateInput = Template.bind({});
-DateInput.args = {
-  type: "date",
-};
-
-export const TimeInput = Template.bind({});
-TimeInput.args = {
-  type: "time",
-};
-
-export const ColorInput = Template.bind({});
-ColorInput.args = {
-  type: "color",
+  defaultValue: "Test",
 };
