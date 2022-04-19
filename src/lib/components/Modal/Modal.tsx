@@ -13,23 +13,17 @@ interface IRequiredProps {
 interface IOptionalProps {
   size?: "sm" | "md" | "lg" | "xlg";
   children?: JSX.Element | JSX.Element[];
-  primaryButtonText?: string;
-  onSubmitRequest?: Function | undefined;
+  footer?: JSX.Element | JSX.Element[];
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
 
-const defaultProps: IOptionalProps = {
-  size: "sm",
-};
-
 function Modal({
   modalHeading,
   onModalClose,
-  size,
+  size = "sm",
   children,
-  primaryButtonText,
-  onSubmitRequest,
+  footer,
 }: IProps): ReactElement {
   const target = useRef(null);
   onClickOutside({ target, callback: () => onModalClose() });
@@ -48,18 +42,10 @@ function Modal({
           />
         </div>
         <div className="modal-content-wrapper">{children}</div>
-        {primaryButtonText && (
-          <div className="modal-footer-wrapper">
-            <Button onClick={() => onSubmitRequest && onSubmitRequest()}>
-              {primaryButtonText}
-            </Button>
-          </div>
-        )}
+        {footer && <div className="modal-footer-wrapper">{footer}</div>}
       </div>
     </div>
   );
 }
-
-Modal.defaultProps = defaultProps;
 
 export default Modal;

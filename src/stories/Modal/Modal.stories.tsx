@@ -19,6 +19,7 @@ export default {
       control: "none",
     },
     children: { description: "The content of the component.", control: "none" },
+    footer: { description: "The content of the footer.", control: "none" },
   },
 } as ComponentMeta<typeof Modal>;
 
@@ -28,6 +29,13 @@ export const Default = Template.bind({});
 Default.args = {
   size: "sm",
   modalHeading: "Modal Title",
-  primaryButtonText: "Save",
   children: <div>Content</div>,
+};
+
+export const WithFooter = Template.bind({});
+WithFooter.args = {
+  size: "sm",
+  modalHeading: "Modal Title",
+  children: <div>Content</div>,
+  footer: <div>Content</div>,
 };
