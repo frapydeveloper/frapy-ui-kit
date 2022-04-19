@@ -8,6 +8,7 @@ interface IRequiredProps {
 }
 
 interface IOptionalProps {
+  id?: string;
   children?: React.ReactChild | React.ReactChild[];
   isVisible?: Function;
   flipped?: boolean;
@@ -18,6 +19,7 @@ interface IProps extends IRequiredProps, IOptionalProps {}
 
 function OverflowMenu({
   invokeItem,
+  id,
   children,
   isVisible,
   flipped = false,
@@ -33,7 +35,11 @@ function OverflowMenu({
   }, [showOverflow]);
 
   return (
-    <div className={`overflow-menu-container ${light && "light"}`} ref={target}>
+    <div
+      id={id}
+      className={`overflow-menu-container ${light && "light"}`}
+      ref={target}
+    >
       {React.cloneElement(invokeItem, {
         onClick: () => setShowOverflow(!showOverflow),
       })}
