@@ -10,7 +10,8 @@ interface IRequiredProps {
 
 interface IOptionalProps {
   id?: string;
-  onClick?: Function | undefined;
+  onClick?: Function;
+  onDoubleClick?: Function;
   fullWidth?: boolean;
   icon?: any;
   color?: string;
@@ -23,6 +24,7 @@ function Project({
   labelText,
   createdAt,
   onClick,
+  onDoubleClick,
   fullWidth,
   icon,
   color,
@@ -32,6 +34,7 @@ function Project({
       id={id}
       className={`project-container ${fullWidth && "full-width"}`}
       onClick={() => onClick && onClick()}
+      onDoubleClick={() => onDoubleClick && onDoubleClick()}
     >
       <div className="project-wrapper">
         <div
