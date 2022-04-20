@@ -8,8 +8,10 @@ interface IOptionalProps {
   children?: JSX.Element | JSX.Element[];
   columns?: number;
   gridTemplate?: [string, string];
-  gridTemplateRepeatType: "auto-fit" | "auto-fill";
+  gridTemplateRepeatType?: "auto-fit" | "auto-fill";
   customColumns?: string;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
 }
 
 interface IProps extends IRequiredProps, IOptionalProps {}
@@ -20,6 +22,8 @@ function Grid({
   gridTemplate,
   gridTemplateRepeatType = "auto-fill",
   customColumns,
+  fullWidth = true,
+  fullHeight = true,
 }: IProps): ReactElement {
   const setStyle = () => {
     let style: React.CSSProperties = {};
@@ -33,11 +37,13 @@ function Grid({
 
       style = { gridTemplateColumns: _stringStyle };
     }
+
     if (gridTemplate) {
       style = {
         gridTemplateColumns: `repeat(${gridTemplateRepeatType}, minmax(${gridTemplate[0]}, ${gridTemplate[1]}))`,
       };
     }
+
     if (customColumns) {
       style = {
         gridTemplateColumns: customColumns,
@@ -48,7 +54,12 @@ function Grid({
   };
 
   return (
-    <div className="grid-container" style={setStyle()}>
+    <div
+      className={`grid-container ${fullWidth && "full-width"} ${
+        fullHeight && "full-height"
+      }`}
+      style={setStyle()}
+    >
       {children}
     </div>
   );
