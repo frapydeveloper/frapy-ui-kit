@@ -10,6 +10,7 @@ import ContextMenuItem from "./components/ContextMenuItem";
 import ContextMenuTrigger from "./components/ContextMenuTrigger";
 import Divider from "./components/Divider";
 import Dropdown from "./components/Dropdown";
+import Grid from "./components/Grid";
 import Input from "./components/Input";
 import Loading from "./components/Loading";
 import Logo from "./components/Logo";
@@ -41,6 +42,7 @@ export {
   ContextMenuTrigger,
   Divider,
   Dropdown,
+  Grid,
   Input,
   Loading,
   Logo,
