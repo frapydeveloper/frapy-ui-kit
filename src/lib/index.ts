@@ -26,6 +26,7 @@ import Sidenav from "./components/Sidenav";
 import SidenavMenu from "./components/SidenavMenu";
 import SidenavMenuItem from "./components/SidenavMenuItem";
 import Stack from "./components/Stack/Stack";
+import Textarea from "./components/Textarea";
 import Typography from "./components/Typography";
 import Variable from "./components/Variable";
 
@@ -56,6 +57,7 @@ export {
   SidenavMenu,
   SidenavMenuItem,
   Stack,
+  Textarea,
   Typography,
   Variable,
 };
