@@ -6,6 +6,9 @@ interface IRequiredProps {}
 
 interface IOptionalProps {
   children?: JSX.Element | JSX.Element[];
+  columnGap?: number;
+  rowGap?: number;
+  gapUnit?: "px" | "%" | "rem" | "em";
   columns?: number;
   gridTemplate?: [string, string];
   gridTemplateRepeatType?: "auto-fit" | "auto-fill";
@@ -19,6 +22,9 @@ interface IProps extends IRequiredProps, IOptionalProps {}
 function Grid({
   children,
   columns,
+  columnGap,
+  rowGap,
+  gapUnit = "px",
   gridTemplate,
   gridTemplateRepeatType = "auto-fill",
   customColumns,
@@ -28,6 +34,11 @@ function Grid({
   const setStyle = () => {
     let style: React.CSSProperties = {};
 
+    style = {
+      columnGap: `${columnGap}${gapUnit}`,
+      rowGap: `${rowGap}${gapUnit}`,
+    };
+
     if (columns) {
       let _stringStyle = "";
 
@@ -35,17 +46,19 @@ function Grid({
         _stringStyle = _stringStyle + ` 1fr`;
       }
 
-      style = { gridTemplateColumns: _stringStyle };
+      style = { ...style, gridTemplateColumns: _stringStyle };
     }
 
     if (gridTemplate) {
       style = {
+        ...style,
         gridTemplateColumns: `repeat(${gridTemplateRepeatType}, minmax(${gridTemplate[0]}, ${gridTemplate[1]}))`,
       };
     }
 
     if (customColumns) {
       style = {
+        ...style,
         gridTemplateColumns: customColumns,
       };
     }
