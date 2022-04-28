@@ -14,6 +14,7 @@ import Grid from "./components/Grid";
 import Input from "./components/Input";
 import Loading from "./components/Loading";
 import Logo from "./components/Logo";
+import Method from "./components/Method";
 import Modal from "./components/Modal";
 import MultiSelect from "./components/MultiSelect";
 import Navbar from "./components/Navbar";
@@ -46,6 +47,7 @@ export {
   Input,
   Loading,
   Logo,
+  Method,
   Modal,
   MultiSelect,
   Navbar,

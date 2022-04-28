@@ -1,0 +1,37 @@
+@import "../../style/colors.scss";
+
+.method-container {
+  display: inline-block;
+  align-items: center;
+  padding: 4px 16px;
+  background-color: $ui-03;
+  font-size: 12px;
+  color: $ui-06;
+  border-radius: 32px;
+  text-transform: uppercase;
+
+  &.post {
+    background-color: $secondary-01;
+    color: $ui-01;
+  }
+
+  &.get {
+    background-color: $secondary-03;
+    color: $ui-01;
+  }
+
+  &.put {
+    background-color: $primary-01;
+    color: $ui-01;
+  }
+
+  &.delete {
+    background-color: $secondary-02;
+    color: $ui-01;
+  }
+
+  &.patch {
+    background-color: $secondary-04;
+    color: $ui-01;
+  }
+}
